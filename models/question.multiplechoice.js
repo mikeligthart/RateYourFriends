@@ -1,16 +1,17 @@
 /**
  * Created by Mike Ligthart on 21-Nov-16.
  */
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var mongooseUniqueValidator = require('mongoose-unique-validator');
+var mongoose = require('mongoose'),
+    extend = require('mongoose-schema-extend');;
+var questionSchema = require('question.js');
 
-var schema = new Schema({
-    question: {type: String, required: true},
-    answers: {type: [String], required: true},
-    playerAnswers: [{type: Schema.Types.ObjectId, ref: 'PlayerAnswer'}]
+/**
+ * See for more information:
+ * https://github.com/briankircho/mongoose-schema-extend
+ */
+
+var questionMCSchema = questionSchema.extend({
+    answers: {type: [String], required: true}
 });
 
-schema.plugin(mongooseUniqueValidator);
-
-module.exports = mongoose.model('QuestionMC', schema);
+module.exports = mongoose.model('QuestionMC', questionMCSchema);

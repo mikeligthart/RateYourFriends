@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
 var schema = new Schema({
-    player: {type: Schema.Types.ObjectId, ref: 'Player'},
+    player: {type: Schema.Types.ObjectId, ref: 'Player', required: true},
     answer: {type: [String], required: true}
 });
 

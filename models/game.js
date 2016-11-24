@@ -6,16 +6,13 @@ var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
 /**
- * TODO: don't foget to notify when questions has been updated with markModified()
- * See example:
- * person.anything = { x: [3, 4, { y: "changed" }] };
- * person.markModified('anything');
- * person.save(); // anything will now get saved
+ * Use instanceof to differentiate between QuestionOpen and QuestionMc
  */
+
 
 var schema = new Schema({
     host: {type: Schema.Types.ObjectId, ref: 'Host', required: true},
-    questions: {type: Schema.Types.Mixed},
+    questions: [{type: Schema.Types.ObjectId, ref: 'QuestionOpen'}],
     players: [{type: Schema.Types.ObjectId, ref: 'Player'}],
     roomNumber: String
 });
