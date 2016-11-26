@@ -1,0 +1,13 @@
+<article class="panel panel-default">
+    <div class="panel-body">
+        Game id: {{ game.hostId}}
+    </div>
+    <footer class="panel-footer">
+        <div>
+            Question ids: {{ game.questionIds }}
+        </div>
+        <div>
+            <a (click)="onDelete()">Delete</a>
+        </div>
+    </footer>
+</article>
