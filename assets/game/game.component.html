@@ -1,13 +1,11 @@
-<article class="panel panel-default">
-    <div class="panel-body">
-        Game id: {{ game.hostId}}
-    </div>
-    <footer class="panel-footer">
-        <div>
-            Question ids: {{ game.questionIds }}
-        </div>
-        <div>
-            <a (click)="onDelete()">Delete</a>
-        </div>
-    </footer>
-</article>
+<div class="card col-md-2 cardRYF" >
+  <img class="card-img-top card-img-top-RYF" src="/images/game_icon_square.png" height="90%" width="90%" alt="Game Icon">
+  <div class="card-block">
+    <h4 class="card-title">{{ game.name}}</h4>
+    <p class="card-text"> <i>{{ game.playDate }}</i> <br>
+      #questions: {{ game.questionIds.length }}<br>
+      #players: {{ game.playerIds.length}}
+    </p>
+    <a href="#" class="btn btn-primary">View</a>
+  </div>
+</div>

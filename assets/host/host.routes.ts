@@ -8,5 +8,5 @@ import {HostNewComponent} from "./host-new.component";
 export const HOST_ROUTES: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full'},
     { path: 'overview', component: HostOverviewComponent},
-    { path: 'new', component: HostNewComponent}
+    { path: 'new/:gameTemplateId', component: HostNewComponent}
 ];

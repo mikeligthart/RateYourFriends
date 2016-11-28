@@ -8,7 +8,17 @@ import {GameService} from "./game.service";
 
 @Component({
     selector: 'app-game',
+    providers: [GameService],
     templateUrl: './game.component.html',
+    styles: [`
+        .cardRYF {
+            margin-right: 10px;
+        }
+        
+        .card-img-top-RYF {
+            padding: 5px;        
+        }
+    `]
 })
 export class GameComponent{
     @Input() game: Game;
