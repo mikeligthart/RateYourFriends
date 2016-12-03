@@ -10,7 +10,4 @@ import {GameTemplate} from "../gameTemplate/game-template.model";
 })
 export class GameCreateComponent{
 @Input() gameTemplate: GameTemplate;
-
-
-
 }

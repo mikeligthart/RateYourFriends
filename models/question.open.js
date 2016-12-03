@@ -2,6 +2,15 @@
  * Created by Mike Ligthart on 22-Nov-16.
  */
 var mongoose = require('mongoose');
-var QuestionSchema = require('question.js');
+var messageSchema = require('message.js');
 
-module.exports = mongoose.model('QuestionOpen', QuestionSchema);
+/**
+ * See for more information:
+ * https://github.com/briankircho/mongoose-schema-extend
+ */
+
+var questionOpenSchema = messageSchema.extend({
+    playerAnswers: [{type: Schema.Types.ObjectId, ref: 'PlayerAnswer'}]
+});
+
+module.exports = mongoose.model('QuestionOpen', questionOpenSchema);

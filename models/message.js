@@ -5,11 +5,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
-var questionSchema = new Schema({
-    question: {type: String, required: true},
-    playerAnswers: [{type: Schema.Types.ObjectId, ref: 'PlayerAnswer'}]
-}, { collection : 'questions', discriminatorKey : '_type'});
+var messageSchema = new Schema({
+    text: {type: String, required: true}
+}, { collection : 'messages', discriminatorKey : '_type'});
 
 schema.plugin(mongooseUniqueValidator);
 
-module.exports = questionSchema;
+module.exports = messageSchema;
