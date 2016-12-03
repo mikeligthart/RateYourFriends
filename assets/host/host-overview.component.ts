@@ -5,7 +5,13 @@ import { Component } from "@angular/core"
 
 @Component({
     selector: 'app-host-overview',
-    templateUrl: './host-overview.component.html'
+    template:
+        `<div class="row">
+          <app-game-list></app-game-list>
+        </div>
+        <div class="row">
+          <app-game-template-list></app-game-template-list>
+      </div>`
 })
 export class HostOverviewComponent{
 

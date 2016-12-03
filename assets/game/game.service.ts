@@ -29,4 +29,12 @@ export class GameService {
         this.games.splice(this.games.indexOf(game), 1);
     }
 
+    getGame(id: string) {
+        for (let game of this.games){
+            if (game.gameId == id){
+                return game;
+            }
+        }
+        return null;
+    }
 }
